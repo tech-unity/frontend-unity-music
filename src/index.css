@@ -3,11 +3,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Lato', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.content {
+  min-height: 80vh;
 }

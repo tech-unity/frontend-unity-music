@@ -1,15 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Scale from './views/Scale/Scale.view';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Header></Header>
+      <div className="content">
+        <Routes>
+          <Route path='/' element={<Scale />} />
+          <Route path='/escalas' element={<Scale />} />
+          <Route path='*' element={<h1>Página não encontrada</h1>} />
+        </Routes>
+      </div>
+      <Footer></Footer>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
