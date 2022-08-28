@@ -1,10 +1,13 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 100%;
-  height: 40vh;
+  width: fit-content;
+  height: max-content;
   background-color: #201f1e;
 
+  border-radius: 10%;
+
+  margin-bottom: 6rem;
 `;
 
 export const HorizontalLine = styled.hr`
@@ -23,6 +26,8 @@ export const Band = styled.div`
   justify-content: start;
   align-items: center;
   gap: 8px;
+
+  padding: 3rem;
 `;
 
 export const Singers = styled.div`
@@ -31,6 +36,8 @@ export const Singers = styled.div`
   justify-content: start;
   align-items: center;
   gap: 8px;
+
+  padding: 3rem;
 `;
 
 export const List = styled.ul`
@@ -50,6 +57,6 @@ export const ListItem = styled.li`
 export const Header = styled.h3`
   font-weight: 600;
   font-size: 2rem;
-  line-height: 60px;
+  line-height: 4rem;
   color: #ffffff;
 `;
