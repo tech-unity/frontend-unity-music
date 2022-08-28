@@ -5,6 +5,7 @@ import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import Home from './views/Home/Home.view';
 import Scale from './views/Scale/Scale.view';
 
 const root = ReactDOM.createRoot(
@@ -16,7 +17,7 @@ root.render(
       <Header></Header>
       <div className="content">
         <Routes>
-          <Route path='/' element={<Scale />} />
+          <Route path='/' element={<Home />} />
           <Route path='/escalas' element={<Scale />} />
           <Route path='*' element={<h1>Página não encontrada</h1>} />
         </Routes>
