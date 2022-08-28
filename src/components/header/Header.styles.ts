@@ -21,7 +21,7 @@ export const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: row;
-  gap: 32px;
+  gap: 16px;
 `;
 
 export const ListItem = styled.li`

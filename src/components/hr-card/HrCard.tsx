@@ -1,4 +1,4 @@
-import * as S from './Scale.styles';
+import * as S from './HrCard.styles';
 
 export default function Scale() {
   return (
