@@ -1,13 +1,14 @@
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.header`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
 
-  background-color: #2B2A28;
-  color: #FFFFFF;
+  background-color: #2b2a28;
+  color: #ffffff;
 `;
 
 export const Section = styled.div`
@@ -21,16 +22,17 @@ export const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  justify-content: space-evenly;
+  gap: 24px;
 `;
 
 export const ListItem = styled.li`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
   color: inherit;
-`
+`;

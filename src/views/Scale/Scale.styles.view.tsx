@@ -1,12 +1,31 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  background: #ffffff;
+  background-color: #2b2a28;
+  color: #ffffff;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+`;
+
+export const Section = styled.div`
+  width: 100%;
+
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+export const Scale = styled.div`
+  padding: 16px;
+  min-width: 320px;
+  max-width: 380px;
+  flex: 1;
 `;
 
 export const Heading = styled.h1`

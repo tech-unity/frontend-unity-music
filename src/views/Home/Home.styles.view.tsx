@@ -16,6 +16,15 @@ export const Container = styled.div<{ base64: string }>`
   justify-content: center;
 `;
 
+export const Text = styled.div`
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+`
+
 export const Header = styled.span`
   color: #fff;
   font-size: 3rem;
