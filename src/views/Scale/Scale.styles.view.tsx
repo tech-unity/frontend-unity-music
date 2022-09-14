@@ -36,3 +36,7 @@ export const Heading = styled.h1`
   line-height: 60px;
   letter-spacing: 0em;
 `;
+
+export const SubHeading = styled.h2`
+
+`

@@ -6,10 +6,9 @@ const BACKGROUND_COLORS = {
   odd: '#A43132',
 };
 
-export const Card = styled.div<{ position: 'odd' | 'even' }>`
+export const ScaleCard = styled.div<{ position: 'odd' | 'even' }>`
   background: ${p => transparentize(0.4, BACKGROUND_COLORS[p.position])};
   border-radius: 20px;
-  width: 30vw;
   height: 460px;
   color: #fff;
 
@@ -30,13 +29,20 @@ export const IconDiv = styled.div`
 
 export const Header = styled.h2``;
 
-export const Content = styled.span`
+export const List = styled.ul`
   font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.3rem;
-  letter-spacing: 0em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  gap: 12px;
+
+  list-style: none;
 `;
+
+export const ListItem = styled.li`
+`
 
 export const CustomIcon = styled.img<{rotateIcon: number}>`
   transform: rotate(${p => p.rotateIcon}deg);

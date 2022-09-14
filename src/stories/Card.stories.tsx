@@ -1,18 +1,18 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import VrCard from '../components/vr-card/VrCard';
+import Card from '../components/card/Card';
 import { mdiGuitarAcoustic, mdiAccountGroup } from '@mdi/js';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/VrCard',
-  component: VrCard,
+  title: 'Example/Card',
+  component: Card,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   // argTypes: {
   //   backgroundColor: { control: 'color' },
   // },
-} as ComponentMeta<typeof VrCard>;
+} as ComponentMeta<typeof Card>;
 
-const Template: ComponentStory<typeof VrCard> = args => <VrCard {...args} />;
+const Template: ComponentStory<typeof Card> = args => <Card {...args} />;
 
 export const Odd = Template.bind({});
 
