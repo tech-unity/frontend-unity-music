@@ -28,12 +28,12 @@ export default function ScaleCard(props: ScaleCardProps) {
       </C.IconDiv>
       <C.Header>{props.header}</C.Header>
       <C.List>
-        {props.bandList?.map(item => (
-          <C.ListItem>{`${item.name} - ${item.instrument}`}</C.ListItem>
+        {props.bandList?.map((item, index) => (
+          <C.ListItem key={index}>{`${item.name} - ${item.instrument}`}</C.ListItem>
         )) }
         
-        {props.singersList?.map(item => (
-          <C.ListItem>{`${item.name}`}</C.ListItem>
+        {props.singersList?.map((item, index) => (
+          <C.ListItem key={index}>{`${item.name}`}</C.ListItem>
         ))}
       </C.List>
     </C.ScaleCard>

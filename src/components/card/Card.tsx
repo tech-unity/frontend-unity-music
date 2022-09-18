@@ -15,7 +15,7 @@ export default function Card(props: CardProps) {
     <C.Card position={props.position}>
       <C.IconDiv>
         {props.isSvg && <C.CustomIcon src={props.icon} alt='' rotateIcon={props.rotateIcon || 0}></C.CustomIcon>}
-        {!props.isSvg && <Icon path={props.icon}></Icon>}
+        {!props.isSvg && <Icon path={props.icon}/>}
       </C.IconDiv>
       <C.Header>{props.header}</C.Header>
       <C.Content>{props.content}</C.Content>
