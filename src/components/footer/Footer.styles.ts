@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.footer`
+export const Wrapper = styled.div`
   background-color: #2b2a28;
   color: #ffffff;
   height: 136px;

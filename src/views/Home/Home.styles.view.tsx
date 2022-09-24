@@ -6,14 +6,11 @@ export const Container = styled.div<{ base64: string }>`
   background-repeat: no-repeat;
   background-position: right top;
   background-size: cover;
-
-  height: 80vh;
+  
   overflow: hidden;
 
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  width: 100%;
+  height: 80vh;
 `;
 
 export const Text = styled.div`

@@ -21,7 +21,7 @@ export const Odd = Template.bind({});
 Odd.args = {
   position: 'odd',
   icon: mdiGuitarAcoustic,
-  header: 'Doação de sangue',
+  header: 'Banda',
   bandList: [
     { name: 'Enzo', instrument: 'Violão' },
     { name: 'Raul', instrument: 'Violão' },

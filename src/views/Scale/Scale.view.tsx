@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import guitar from '../../assets/contributions/guitar.svg';
 import ScaleCard from '../../components/scale-card/ScaleCard';
 import { Band, Singers } from '../../core/models/Scale';
+import DefaultLayout from '../../layouts/Default';
 import { getScales } from '../../services/Scale.service';
 import * as S from './Scale.styles.view';
 
@@ -33,7 +34,7 @@ export default function ScaleView() {
   };
 
   return (
-    <S.Wrapper>
+    <DefaultLayout>
       <S.Heading>Escala</S.Heading>
       <S.SubHeading>{dayjs(date).format('DD-MM-YYYY')}</S.SubHeading>
       <S.Section>
@@ -56,6 +57,6 @@ export default function ScaleView() {
           ></ScaleCard>
         </S.Scale>
       </S.Section>
-    </S.Wrapper>
+    </DefaultLayout>
   );
 }

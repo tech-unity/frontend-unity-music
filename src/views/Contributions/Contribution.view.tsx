@@ -3,18 +3,19 @@ import guitar from '../../assets/contributions/guitar.svg';
 import hands from '../../assets/contributions/hands.svg';
 
 import Card from '../../components/card/Card';
+import DefaultLayout from '../../layouts/Default';
 import * as C from './Contribution.styles.view';
 
 export default function ContributionView() {
   return (
-    <C.Wrapper>
+    <DefaultLayout>
       <C.Heading>Contribuições</C.Heading>
       <C.Section>
         <C.Contributions>
           <Card
             position='odd'
             header='Doação de sangue'
-            content='Praesent eget nulla bibendum, sodales neque quis, elementum leo. Donec vestibulum accumsan odio sit amet interdum. Morbi vitae ante eu sapien molestie gravida. '
+            content='Uma vez por semestre nos juntamos para doar sangue no Hemosul, aproveitando a oportunidade para distribuir literatura adventista.'
             isSvg={true}
             icon={bloodSack}
           ></Card>
@@ -22,8 +23,9 @@ export default function ContributionView() {
         <C.Contributions>
           <Card
             position='even'
-            header='Voluntário'
-            content='Praesent eget nulla bibendum, sodales neque quis, elementum leo. Donec vestibulum accumsan odio sit amet interdum. Morbi vitae ante eu sapien molestie gravida. '
+            header='Voluntariado'
+            content='O papel da igreja é auxiliar o próximo.
+            Por isso ajudamos a comunidade com tudo que está ao nosso alcance.'
             isSvg={true}
             icon={hands}
           ></Card>
@@ -31,13 +33,14 @@ export default function ContributionView() {
         <C.Contributions>
           <Card
             position='odd'
-            header='Serenata'
-            content='Praesent eget nulla bibendum, sodales neque quis, elementum leo. Donec vestibulum accumsan odio sit amet interdum. Morbi vitae ante eu sapien molestie gravida. '
+            header='Serenatas'
+            content='Música acalma, estimula a memória, alivia dores e ajuda no exercício físico.
+            Por isso, utilizamos dessa linguagem universal para levar amor ao próximo.'
             isSvg={true}
             icon={guitar}
           ></Card>
         </C.Contributions>
       </C.Section>
-    </C.Wrapper>
+    </DefaultLayout>
   );
 }

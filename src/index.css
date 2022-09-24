@@ -16,8 +16,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.content {
-  min-height: 80vh;
-  background-color: #2b2a28;
-}

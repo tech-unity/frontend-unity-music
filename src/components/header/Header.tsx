@@ -4,11 +4,11 @@ import * as H from './Header.styles';
 export default function Header() {
   return (
     <H.Wrapper>
-      {/* <H.Section> */}
+      <H.Section>
         <H.StyledLink to='/'>
           <img src={logo} alt='Logo da unity' width={'160px'} height={'80px'} />
         </H.StyledLink>
-      {/* </H.Section> */}
+      </H.Section>
       <H.Section>
         <H.List>
           <H.ListItem>
