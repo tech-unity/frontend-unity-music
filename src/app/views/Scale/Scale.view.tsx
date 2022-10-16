@@ -1,14 +1,16 @@
 import { mdiAccountGroup } from '@mdi/js';
 import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
-import guitar from '../../assets/contributions/guitar.svg';
+import { Band, Singers } from '../../../sdk/models/Scale';
+import ScaleService from '../../../sdk/services/Scale.service';
+import guitar from '../../../assets/contributions/guitar.svg'
 import ScaleCard from '../../components/scale-card/ScaleCard';
-import { Band, Singers } from '../../core/models/Scale';
 import DefaultLayout from '../../layouts/Default';
-import { getScales } from '../../services/Scale.service';
 import * as S from './Scale.styles.view';
+import usePageTitle from '../../../core/hooks/usePageTitle';
 
 export default function ScaleView() {
+  usePageTitle('Escalas')
   const [band, setBand] = useState<Band[]>();
   const [singers, setSingers] = useState<Singers[]>();
   const [date, setDate] = useState<Date>();
@@ -21,7 +23,7 @@ export default function ScaleView() {
 
   const fetchData = async () => {
     try {
-      const scale = await getScales();
+      const scale = await ScaleService.getScales();
       console.log(scale);
       setBand([
         { name: 'Enzo', instrument: 'Violão' },

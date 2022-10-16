@@ -1,6 +1,6 @@
-import facebookLogo from '../../assets/facebook.svg';
-import instagramLogo from '../../assets/instagram.svg';
-import locationLogo from '../../assets/location.svg';
+import facebookLogo from '../../../assets/facebook.svg';
+import instagramLogo from '../../../assets/instagram.svg';
+import locationLogo from '../../../assets/location.svg';
 
 import * as F from './Footer.styles';
 

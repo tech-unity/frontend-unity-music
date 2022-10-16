@@ -1,12 +1,14 @@
-import bloodSack from '../../assets/contributions/bloodSack.svg';
-import guitar from '../../assets/contributions/guitar.svg';
-import hands from '../../assets/contributions/hands.svg';
+import bloodSack from '../../../assets/contributions/bloodSack.svg';
+import guitar from '../../../assets/contributions/guitar.svg';
+import hands from '../../../assets/contributions/hands.svg';
+import usePageTitle from '../../../core/hooks/usePageTitle';
 
 import Card from '../../components/card/Card';
 import DefaultLayout from '../../layouts/Default';
 import * as C from './Contribution.styles.view';
 
 export default function ContributionView() {
+  usePageTitle('Contribuições')
   return (
     <DefaultLayout>
       <C.Heading>Contribuições</C.Heading>

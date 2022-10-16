@@ -1,5 +1,5 @@
 import Icon from '@mdi/react';
-import { Band, Singers } from '../../core/models/Scale';
+import { Band, Singers } from '../../../sdk/models/Scale';
 import * as C from './ScaleCard.styles';
 
 export interface ScaleCardProps {

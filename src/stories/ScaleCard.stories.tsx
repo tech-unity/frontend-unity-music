@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import ScaleCard from '../components/scale-card/ScaleCard';
+import ScaleCard from '../app/components/scale-card/ScaleCard';
 import { mdiGuitarAcoustic, mdiAccountGroup } from '@mdi/js';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
