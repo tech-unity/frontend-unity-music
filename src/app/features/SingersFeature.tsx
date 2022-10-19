@@ -1,14 +1,17 @@
 import { mdiAccountGroup } from "@mdi/js";
 import { useEffect, useState } from "react";
-import { Singers } from "../../sdk/models/Scale";
+import { Person } from "../../sdk/models/Person";
 import ScaleService from "../../sdk/services/Scale.service";
 import ScaleCard from "../components/scale-card/ScaleCard";
 
 export default function SingersFeature() {
-  const [singers, setSingers] = useState<Singers[]>();
+  const [singers, setSingers] = useState<Person[]>();
   
   useEffect(() => {
-    const scale = ScaleService.getScales()
+    // TODO: usar redux aqui
+    ScaleService.getScales().then(scales => {
+      setSingers(scales[scales.length - 1].singers)
+    })
   }, []);
 
   return (

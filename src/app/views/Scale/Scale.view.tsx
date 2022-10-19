@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 import { useEffect, useState } from 'react';
 
 import usePageTitle from '../../../core/hooks/usePageTitle';
+import ScaleService from '../../../sdk/services/Scale.service';
 import BandFeature from '../../features/BandFeature';
 import SingersFeature from '../../features/SingersFeature';
 import DefaultLayout from '../../layouts/Default';
@@ -12,7 +13,12 @@ export default function ScaleView() {
 
   const [date, setDate] = useState<Date>();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    // TODO: usar redux aqui
+    ScaleService.getScales().then(scales => {
+      setDate(scales[scales.length - 1].date);
+    });
+  }, []);
 
   return (
     <DefaultLayout>

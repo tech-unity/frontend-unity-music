@@ -1,14 +1,15 @@
+import { Instrument } from "./Instrument";
+import { Person } from "./Person";
+
 export interface Scale {
-  band: Band;
-  singers: Singers;
+  band: Band[];
+  singers: Person[];
   date: Date;
 }
 
 export interface Band {
-  name: string;
-  instrument: string;
+  id: string;
+  instrument: Instrument;
+  person: Person;
 }
 
-export interface Singers {
-  name: string;
-}

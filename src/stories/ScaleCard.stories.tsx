@@ -23,9 +23,21 @@ Odd.args = {
   icon: mdiGuitarAcoustic,
   header: 'Banda',
   bandList: [
-    { name: 'Enzo', instrument: 'Violão' },
-    { name: 'Raul', instrument: 'Violão' },
-    { name: 'Gabriel', instrument: 'Teclado' },
+    {
+      id: 'a',
+      person: { id: 'a', name: 'Enzo', email: 'v', gender: 'M', isMinister: false },
+      instrument: { name: 'Violão', id: 'a' },
+    },
+    {
+      id: 'c',
+      person: { id: 'b', name: 'Raul', email: 'v', gender: 'M', isMinister: false },
+      instrument: { name: 'Violão', id: 'b' },
+    },
+    {
+      id: 'c',
+      person: { id: 'c', name: 'Gabriel', email: 'v', gender: 'M', isMinister: false },
+      instrument: { name: 'Teclado', id: 'c' },
+    },
   ],
 };
 
@@ -35,5 +47,5 @@ Even.args = {
   position: 'even',
   icon: mdiAccountGroup,
   header: 'Serenata',
-  singersList: [{ name: 'Leandro' }, { name: 'Amanda' }],
+  singersList: [{ id: 'c', name: 'Leandro', email: 'v', gender: 'M', isMinister: true }, { id: 'c', name: 'Carol', email: 'v', gender: 'F', isMinister: false }],
 };

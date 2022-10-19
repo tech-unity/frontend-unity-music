@@ -3,7 +3,7 @@ import Service from '../Service';
 
 class ScaleService extends Service {
   static getScales() {
-    return this.Http.get<Scale>('/scales').then(this.getData);
+    return this.Http.get<Scale[]>('/scales').then(this.getData);
   }
 }
 

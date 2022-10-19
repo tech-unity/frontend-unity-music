@@ -8,7 +8,10 @@ export default function BandFeature() {
   const [band, setBand] = useState<Band[]>();
 
   useEffect(() => {
-    const scale = ScaleService.getScales();
+    // TODO: usar redux aqui
+    ScaleService.getScales().then(scales => {
+      setBand(scales[scales.length - 1].band);
+    });
   }, []);
 
   return (
