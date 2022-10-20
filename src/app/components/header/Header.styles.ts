@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -32,9 +31,12 @@ export const ListItem = styled.li`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-`;
+  a {
+    text-decoration: none;
+    color: #FFF;
 
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: inherit;
+    &.active {
+      color: #de7d7e;
+    }
+  }
 `;

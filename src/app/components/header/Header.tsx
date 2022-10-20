@@ -1,21 +1,22 @@
-import logo from '../../../assets/Logo.png';
+import { NavLink } from 'react-router-dom';
+import Logo from '../Logo';
 import * as H from './Header.styles';
 
 export default function Header() {
   return (
     <H.Wrapper>
       <H.Section>
-        <H.StyledLink to='/'>
-          <img src={logo} alt='Logo da unity' width={'160px'} height={'80px'} />
-        </H.StyledLink>
+        <NavLink to='/'>
+        <Logo />
+        </NavLink>
       </H.Section>
       <H.Section>
         <H.List>
           <H.ListItem>
-            <H.StyledLink to='/escalas'>Escalas</H.StyledLink>
+            <NavLink to='/escalas'>Escalas</NavLink>
           </H.ListItem>
           <H.ListItem>
-            <H.StyledLink to='/contribuicoes'>Contribuições</H.StyledLink>
+            <NavLink to='/contribuicoes'>Contribuições</NavLink>
           </H.ListItem>
         </H.List>
       </H.Section>
