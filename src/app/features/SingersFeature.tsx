@@ -1,18 +1,24 @@
-import { mdiAccountGroup } from "@mdi/js";
-import { useEffect, useState } from "react";
-import { Person } from "../../sdk/models/Person";
-import ScaleService from "../../sdk/services/Scale.service";
-import ScaleCard from "../components/scale-card/ScaleCard";
+import { mdiAccountGroup } from '@mdi/js';
+import { useEffect, useState } from 'react';
+import withBoundary from '../../core/hoc/withBoundary';
+import { Person } from '../../sdk/models/Person';
+import ScaleService from '../../sdk/services/Scale.service';
+import ScaleCard from '../components/scale-card/ScaleCard';
 
-export default function SingersFeature() {
+export function SingersFeature() {
   const [singers, setSingers] = useState<Person[]>();
-  
+  const [error, setError] = useState<Error>();
+
   useEffect(() => {
     // TODO: usar redux aqui
-    ScaleService.getScales().then(scales => {
-      setSingers(scales[scales.length - 1].singers)
-    })
+    ScaleService.getScales()
+      .then(scales => {
+        setSingers(scales[scales.length - 1].singers);
+      })
+      .catch(error => setError(new Error(error.message)));
   }, []);
+
+  if (error) throw error;
 
   return (
     <ScaleCard
@@ -24,3 +30,5 @@ export default function SingersFeature() {
     ></ScaleCard>
   );
 }
+
+export default withBoundary(SingersFeature, 'vocal');
