@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   
   height: 100%;
 
-  background-color: #2b2a28;
+  background-color: #212529;
   color: #ffffff;
 `;
 

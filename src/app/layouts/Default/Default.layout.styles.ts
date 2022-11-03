@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   gap: 16px;
   margin: 0 auto;
 
-  background-color: #2b2a28;
+  background-color: #212529;
   color: #fff;
 `;
 
