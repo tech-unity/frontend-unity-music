@@ -36,7 +36,7 @@ export const ListItem = styled.li`
     color: #FFF;
 
     &.active {
-      color: #de7d7e;
+      color: #FFBB33;
     }
   }
 `;
