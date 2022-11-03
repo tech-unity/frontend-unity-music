@@ -16,7 +16,7 @@ export const Section = styled.div`
   padding-top: 8px;
 `;
 
-export const Circle = styled.div`
+export const Circle = styled.a`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,9 +25,19 @@ export const Circle = styled.div`
   height: 80px;
   width: 80px;
 
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+  color: #2b2a28;
+  text-decoration: none;
   border-radius: 50%;
-`
+
+  &:hover {
+    background-color: #c73537;
+    color: #ffffff;
+  }
+  &.active {
+    color: #de7d7e;
+  }
+`;
 
 export const Copyright = styled.div`
   display: flex;

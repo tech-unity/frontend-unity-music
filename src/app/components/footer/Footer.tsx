@@ -1,27 +1,25 @@
-import facebookLogo from '../../../assets/facebook.svg';
-import instagramLogo from '../../../assets/instagram.svg';
-import locationLogo from '../../../assets/location.svg';
+import { mdiFacebook } from '@mdi/js';
+import { mdiInstagram } from '@mdi/js';
+import { mdiMapMarker } from '@mdi/js';
+import Icon from '@mdi/react';
+import { NavLink } from 'react-router-dom';
 
 import * as F from './Footer.styles';
 
-export default function Footer({...props}: React.HTMLAttributes<HTMLElement>) {
+export default function Footer({
+  ...props
+}: React.HTMLAttributes<HTMLElement>) {
   return (
     <F.Wrapper {...props}>
       <F.Section>
-        <F.Circle>
-          <a href='https://www.facebook.com/jaguanandi/' target='_blank'>
-            <img src={facebookLogo} alt='Facebook logo' />
-          </a>
+        <F.Circle href='https://www.facebook.com/jaguanandi/' target='_blank'>
+          <Icon path={mdiFacebook} size='70%' />
         </F.Circle>
-        <F.Circle>
-          <a href='https://www.instagram.com/jaguanandi/' target='_blank'>
-            <img src={instagramLogo} alt='Instagram Logo' />
-          </a>
+        <F.Circle href='https://www.instagram.com/jaguanandi/' target='_blank'>
+          <Icon path={mdiInstagram} size='50%' />
         </F.Circle>
-        <F.Circle>
-          <a href='https://goo.gl/maps/rsDJWenj9ZJKKvnV6' target='_blank'>
-            <img src={locationLogo} alt='Location' />
-          </a>
+        <F.Circle href='https://goo.gl/maps/rsDJWenj9ZJKKvnV6' target='_blank'>
+          <Icon path={mdiMapMarker} size='50%' />
         </F.Circle>
       </F.Section>
       <F.Section>
