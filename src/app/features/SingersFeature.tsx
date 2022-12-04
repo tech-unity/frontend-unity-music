@@ -1,30 +1,24 @@
 import { mdiAccountGroup } from '@mdi/js';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import withBoundary from '../../core/hoc/withBoundary';
-import { Person } from '../../sdk/models/Person';
-import ScaleService from '../../sdk/services/Scale.service';
+import {
+  selectCurrentScaleSingers,
+  selectErrorOnFetching,
+} from '../../core/selectors/selectScales';
 import ScaleCard from '../components/scale-card/ScaleCard';
 
 export function SingersFeature() {
-  const [singers, setSingers] = useState<Person[]>();
-  const [error, setError] = useState<Error>();
+  const currentSingers = useSelector(selectCurrentScaleSingers);
+  const errorOnFetching = useSelector(selectErrorOnFetching);
 
-  useEffect(() => {
-    // TODO: usar redux aqui
-    ScaleService.getScales()
-      .then(scales => {
-        setSingers(scales[scales.length - 1].singers);
-      })
-      .catch(error => setError(new Error(error.message)));
-  }, []);
-
-  if (error) throw error;
+  if (errorOnFetching) throw errorOnFetching;
 
   return (
     <ScaleCard
       position='even'
       header='Vocal'
-      singersList={singers}
+      singersList={currentSingers}
       isSvg={false}
       icon={mdiAccountGroup}
     ></ScaleCard>

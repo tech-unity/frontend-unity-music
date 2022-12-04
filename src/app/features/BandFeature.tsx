@@ -4,27 +4,23 @@ import { Band } from '../../sdk/models/Scale';
 import { useEffect, useState } from 'react';
 import ScaleService from '../../sdk/services/Scale.service';
 import withBoundary from '../../core/hoc/withBoundary';
+import { useSelector } from 'react-redux';
+import {
+  selectCurrentScaleBand,
+  selectErrorOnFetching,
+} from '../../core/selectors/selectScales';
 
 export function BandFeature() {
-  const [band, setBand] = useState<Band[]>();
-  const [error, setError] = useState<Error>();
+  const currentBand = useSelector(selectCurrentScaleBand);
+  const errorOnFetching = useSelector(selectErrorOnFetching);
 
-  useEffect(() => {
-    // TODO: usar redux aqui
-    ScaleService.getScales()
-      .then(scales => {
-        setBand(scales[scales.length - 1].band);
-      })
-      .catch(error => setError(new Error(error.message)));
-  }, []);
+  if (errorOnFetching) throw errorOnFetching;
 
-  if (error) throw error;
-  
   return (
     <ScaleCard
       position='odd'
       header='Banda'
-      bandList={band}
+      bandList={currentBand}
       isSvg={true}
       icon={guitar}
     ></ScaleCard>

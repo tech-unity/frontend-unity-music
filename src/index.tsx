@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import ContributionView from './app/views/Contributions/Contribution.view';
 import HomeView from './app/views/Home/Home.view';
 import Scale from './app/views/Scale/Scale.view';
+import { Provider } from 'react-redux';
+import store from './core/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,15 +16,17 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
         <Routes>
           <Route path='/' element={<HomeView />} />
-          <Route path='/escalas' element={ <Scale /> } />
+          <Route path='/escalas' element={<Scale />} />
           <Route path='/contribuicoes' element={<ContributionView />} />
           <Route path='*' element={<h1>Página não encontrada</h1>} />
         </Routes>
-    </BrowserRouter>
-    <GlobalStyles></GlobalStyles>
+      </BrowserRouter>
+      <GlobalStyles></GlobalStyles>
+    </Provider>
   </React.StrictMode>
 );
 
