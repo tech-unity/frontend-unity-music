@@ -7,21 +7,23 @@ export function selectScales(state: RootState): Scale[] {
   return state.scale?.items;
 }
 
-export function selectCurrentScale(state: RootState): Scale {
+export function selectCurrentScale(state: RootState): Scale | undefined {
   const scales = state.scale.items;
-  return scales[scales.length - 1];
+  return scales ? scales[scales.length - 1] : undefined;
 }
 
-export function selectCurrentScaleBand(state: RootState): Band[] {
-  return selectCurrentScale(state).band;
+export function selectCurrentScaleBand(state: RootState): Band[] | undefined {
+  return selectCurrentScale(state)?.band;
 }
 
-export function selectCurrentScaleSingers(state: RootState): Person[] {
-  return selectCurrentScale(state).singers;
+export function selectCurrentScaleSingers(
+  state: RootState
+): Person[] | undefined {
+  return selectCurrentScale(state)?.singers;
 }
 
-export function selectCurrentScaleDate(state: RootState): Date {
-  return selectCurrentScale(state).date;
+export function selectCurrentScaleDate(state: RootState): Date | undefined {
+  return selectCurrentScale(state)?.date;
 }
 
 export function selectErrorOnFetching(

@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { scaleReducer } from './Scale.slice';
+import { scaleReducer } from './Scale.store';
 
 const store = configureStore({
   reducer: {

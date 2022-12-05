@@ -1,16 +1,10 @@
 import { mdiAccountGroup } from '@mdi/js';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
 import withBoundary from '../../core/hoc/withBoundary';
-import {
-  selectCurrentScaleSingers,
-  selectErrorOnFetching,
-} from '../../core/selectors/selectScales';
+import useScale from '../../core/hooks/useScale';
 import ScaleCard from '../components/scale-card/ScaleCard';
 
 export function SingersFeature() {
-  const currentSingers = useSelector(selectCurrentScaleSingers);
-  const errorOnFetching = useSelector(selectErrorOnFetching);
+  const { currentSingers, errorOnFetching } = useScale();
 
   if (errorOnFetching) throw errorOnFetching;
 

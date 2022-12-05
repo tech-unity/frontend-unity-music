@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import usePageTitle from '../../../core/hooks/usePageTitle';
+import useScale from '../../../core/hooks/useScale';
 import { selectCurrentScaleDate } from '../../../core/selectors/selectScales';
 import { AppDispatch } from '../../../core/store';
-import { fetchScales } from '../../../core/store/Scale.slice';
+import { fetchScales } from '../../../core/store/Scale.store';
 import BandFeature from '../../features/BandFeature';
 import SingersFeature from '../../features/SingersFeature';
 import DefaultLayout from '../../layouts/Default';
@@ -13,17 +14,19 @@ import * as S from './Scale.styles.view';
 
 export default function ScaleView() {
   usePageTitle('Escalas');
-  const dispatch: AppDispatch = useDispatch();
-  const scaleDate = useSelector(selectCurrentScaleDate);
+
+  const { currentScaleDate, fetchScales } = useScale();
 
   useEffect(() => {
-    dispatch(fetchScales());
-  }, [dispatch]);
+    fetchScales();
+  }, [fetchScales]);
 
   return (
     <DefaultLayout>
       <S.Heading>Escala</S.Heading>
-      <S.SubHeading>{dayjs(scaleDate).format('DD-MM-YYYY')}</S.SubHeading>
+      <S.SubHeading>
+        {dayjs(currentScaleDate).format('DD-MM-YYYY')}
+      </S.SubHeading>
       <S.Section>
         <S.Scale>
           <BandFeature></BandFeature>
