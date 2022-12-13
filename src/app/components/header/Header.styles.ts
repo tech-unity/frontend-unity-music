@@ -1,22 +1,21 @@
 import styled from 'styled-components';
+import { HEADER_HEIGHT } from '../../_constants';
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  
-  height: 100%;
+export const Wrapper = styled.header`
+  width: 100%;
+  height: ${HEADER_HEIGHT}px;
 
   background-color: #212529;
   color: #ffffff;
 `;
 
-export const Section = styled.div`
+export const Container = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin: auto;
+  height: 100%;
+  max-width: 848px;
 `;
 
 export const List = styled.ul`
@@ -33,10 +32,10 @@ export const ListItem = styled.li`
   justify-content: space-evenly;
   a {
     text-decoration: none;
-    color: #FFF;
+    color: #fff;
 
     &.active {
-      color: #FFBB33;
+      color: #ffbb33;
     }
   }
 `;

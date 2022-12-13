@@ -1,49 +1,23 @@
 import styled from 'styled-components';
+import { FOOTER_HEIGHT } from '../../_constants';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.footer`
   background-color: #212529;
   color: #ffffff;
-  height: 136px;
+
+  width: 100%;
+  height: ${FOOTER_HEIGHT}px;
 `;
 
-export const Section = styled.div`
+export const Container = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 26px;
-
-  padding-top: 8px;
-`;
-
-export const Circle = styled.a`
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  height: 80px;
-  width: 80px;
-
-  background-color: #ffffff;
-  color: #2b2a28;
-  text-decoration: none;
-  border-radius: 50%;
-
-  &:hover {
-    background-color: #c73537;
-    color: #ffffff;
-  }
-  &.active {
-    color: #de7d7e;
-  }
-`;
-
-export const Copyright = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  gap: 26px;
+  max-width: 840px;
+  margin: auto;
+  height: 100%;
 `;
 
 export const SmallText = styled.span`

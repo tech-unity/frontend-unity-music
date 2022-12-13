@@ -1,21 +1,10 @@
 import styled from 'styled-components';
+import { FOOTER_HEIGHT, HEADER_HEIGHT } from '../../_constants';
 
 export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin: 0 auto;
-
   background-color: #212529;
   color: #fff;
 `;
-
-export const Header = styled.header`
-  width: 100%;
-  height: 136px;
-`;
-
-export const Footer = styled.footer``;
 
 export const Main = styled.main``;
 
@@ -26,8 +15,7 @@ export const FeaturedContent = styled.section`
   align-items: center;
 
   width: 100%;
-  height: 100%;
-  min-height: 70vh;
+  min-height: calc(100vh - ${FOOTER_HEIGHT}px - ${HEADER_HEIGHT}px);
   flex: 1;
   gap: 32px;
 `;

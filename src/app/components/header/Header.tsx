@@ -5,12 +5,10 @@ import * as H from './Header.styles';
 export default function Header() {
   return (
     <H.Wrapper>
-      <H.Section>
+      <H.Container>
         <NavLink to='/'>
-        <Logo />
+          <Logo />
         </NavLink>
-      </H.Section>
-      <H.Section>
         <H.List>
           <H.ListItem>
             <NavLink to='/escalas'>Escalas</NavLink>
@@ -19,7 +17,7 @@ export default function Header() {
             <NavLink to='/contribuicoes'>Contribuições</NavLink>
           </H.ListItem>
         </H.List>
-      </H.Section>
+      </H.Container>
     </H.Wrapper>
   );
 }

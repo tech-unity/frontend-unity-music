@@ -8,15 +8,11 @@ interface DefaultLayoutProps {
 function DefaultLayout(props: DefaultLayoutProps) {
   return (
     <DL.Wrapper>
-      <DL.Header>
-        <Header />
-      </DL.Header>
+      <Header />
       <DL.Main>
         <DL.FeaturedContent>{props.children}</DL.FeaturedContent>
       </DL.Main>
-      <DL.Footer>
-        <Footer></Footer>
-      </DL.Footer>
+      <Footer></Footer>
     </DL.Wrapper>
   );
 }

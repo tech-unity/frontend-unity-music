@@ -9,10 +9,6 @@ export default createGlobalStyle`
 
   body {
     font-family: 'Monteserrat', sans-serif;
-
-    display: flex;
-    flex-direction: column;
-    height: 100%;
   }
 
   code {
