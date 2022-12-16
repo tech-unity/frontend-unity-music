@@ -16,6 +16,7 @@ export const ScaleCard = styled.div<{ position: 'odd' | 'even' }>`
   max-width: 380px;
   width: 100%;
   border-radius: 20px;
+  padding: 2rem;
 
   background: ${p => transparentize(0.4, BACKGROUND_COLORS[p.position])};
   color: #fff;
@@ -30,7 +31,10 @@ export const Content = styled.div``;
 
 export const IconDiv = styled.div`
   width: 120px;
-  height: 96px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Header = styled.h2``;

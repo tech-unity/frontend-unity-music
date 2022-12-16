@@ -24,7 +24,10 @@ export const Card = styled.div<{ position: 'odd' | 'even' }>`
 
 export const IconDiv = styled.div`
   width: 120px;
-  height: 96px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Header = styled.h2``;
@@ -35,8 +38,4 @@ export const Content = styled.span`
   line-height: 1.3rem;
   letter-spacing: 0em;
   text-align: center;
-`;
-
-export const CustomIcon = styled.img<{rotateIcon: number}>`
-  transform: rotate(${p => p.rotateIcon}deg);
 `;

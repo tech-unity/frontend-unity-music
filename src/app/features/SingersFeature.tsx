@@ -13,7 +13,6 @@ export function SingersFeature() {
       position='even'
       header='Vocal'
       singersList={currentSingers}
-      isSvg={false}
       icon={mdiAccountGroup}
     ></ScaleCard>
   );

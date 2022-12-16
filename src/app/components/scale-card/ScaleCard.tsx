@@ -5,8 +5,8 @@ import * as C from './ScaleCard.styles';
 
 export interface ScaleCardProps {
   position: 'even' | 'odd';
-  icon: string;
-  isSvg: boolean;
+  iconJSX?: React.ReactNode;
+  icon?: string;
   header: string;
   rotateIcon?: number;
 
@@ -17,16 +17,12 @@ export interface ScaleCardProps {
 export default function ScaleCard(props: ScaleCardProps) {
   return (
     <C.ScaleCard position={props.position}>
-      <C.IconDiv>
-        {props.isSvg && (
-          <C.CustomIcon
-            src={props.icon}
-            alt=''
-            rotateIcon={props.rotateIcon || 0}
-          ></C.CustomIcon>
-        )}
-        {!props.isSvg && <Icon path={props.icon}></Icon>}
-      </C.IconDiv>
+      {props.iconJSX && <C.IconDiv>{props.iconJSX}</C.IconDiv>}
+      {props.icon && (
+        <C.IconDiv>
+          <Icon path={props.icon} />
+        </C.IconDiv>
+      )}
       <C.Header>{props.header}</C.Header>
       <C.List>
         {props.bandList?.map((item, index) => (

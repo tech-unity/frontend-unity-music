@@ -1,4 +1,4 @@
-import guitar from '../../assets/contributions/guitar.svg';
+import Guitar from '../../assets/contributions/Guitar';
 import withBoundary from '../../core/hoc/withBoundary';
 import useScale from '../../core/hooks/useScale';
 import ScaleCard from '../components/scale-card/ScaleCard';
@@ -13,8 +13,7 @@ export function BandFeature() {
       position='odd'
       header='Banda'
       bandList={currentBand}
-      isSvg={true}
-      icon={guitar}
+      iconJSX={<Guitar />}
     ></ScaleCard>
   );
 }
