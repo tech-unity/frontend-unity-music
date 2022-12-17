@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import { mdiFacebook, mdiInstagram, mdiMapMarker } from '@mdi/js';
 import Icon from '@mdi/react';
+import FacebookIcon from '../../../assets/facebook';
 
 export default function FooterIcons() {
   return (
     <Wrapper>
-      <Circle href='https://www.facebook.com/jaguanandi/' target='_blank'>
-        <Icon path={mdiFacebook} size='70%' />
-      </Circle>
       <Circle href='https://www.instagram.com/jaguanandi/' target='_blank'>
         <Icon path={mdiInstagram} size='50%' />
+      </Circle>
+      <Circle href='https://www.facebook.com/jaguanandi/' target='_blank'>
+        <FacebookIcon />
       </Circle>
       <Circle href='https://goo.gl/maps/rsDJWenj9ZJKKvnV6' target='_blank'>
         <Icon path={mdiMapMarker} size='50%' />
@@ -35,10 +36,11 @@ const Circle = styled.a`
   height: 80px;
   width: 80px;
 
-  background-color: #ffffff;
-  color: #2b2a28;
+  background-color: transparent;
+  color: #fff;
   text-decoration: none;
   border-radius: 50%;
+  border: 2px solid #fff;
 
   &:hover {
     background-color: #c73537;
