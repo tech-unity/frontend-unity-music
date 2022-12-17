@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FOOTER_HEIGHT } from '../../_constants';
+import { FOOTER_HEIGHT, MEDIA_QUERY_MEDIUM_SIZE } from '../../_constants';
 
 export const Wrapper = styled.footer`
   background-color: #212529;
@@ -18,6 +18,10 @@ export const Container = styled.div`
   max-width: 840px;
   margin: auto;
   height: 100%;
+
+  @media (max-width: ${MEDIA_QUERY_MEDIUM_SIZE}px) {
+    justify-content: center;
+  }
 `;
 
 export const Branding = styled.span`
@@ -25,6 +29,10 @@ export const Branding = styled.span`
   align-items: center;
   justify-content: center;
   flex-direction: row;
+
+  @media (max-width: ${MEDIA_QUERY_MEDIUM_SIZE}px) {
+    display: none;
+  }
 `;
 
 export const Text = styled.div`
