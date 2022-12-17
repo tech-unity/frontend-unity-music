@@ -6,7 +6,9 @@ export const Wrapper = styled.div`
   color: #fff;
 `;
 
-export const Main = styled.main``;
+export const Main = styled.main`
+  width: 100%;
+`;
 
 export const FeaturedContent = styled.section`
   display: flex;
@@ -14,7 +16,8 @@ export const FeaturedContent = styled.section`
   justify-content: center;
   align-items: center;
 
-  width: 100%;
+  max-width: 1440px;
+  margin: auto;
   min-height: calc(100vh - ${FOOTER_HEIGHT}px - ${HEADER_HEIGHT}px);
   flex: 1;
   gap: 32px;
