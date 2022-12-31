@@ -1,6 +1,6 @@
 import { SerializedError } from '@reduxjs/toolkit';
 import { Person } from '../../sdk/models/Person';
-import { Band, Scale } from '../../sdk/models/Scale';
+import { Band, Scale, Song } from '../../sdk/models/Scale';
 import { RootState } from '../store';
 
 export function selectScales(state: RootState): Scale[] {
@@ -24,6 +24,10 @@ export function selectCurrentScaleSingers(
 
 export function selectCurrentScaleDate(state: RootState): Date | undefined {
   return selectCurrentScale(state)?.date;
+}
+
+export function selectCurrentSongs(state: RootState): Song[] | undefined {
+  return selectCurrentScale(state)?.musics;
 }
 
 export function selectErrorOnFetching(

@@ -6,7 +6,8 @@ import './core/imports.css';
 import reportWebVitals from './reportWebVitals';
 import ContributionView from './app/views/Contributions/Contribution.view';
 import HomeView from './app/views/Home/Home.view';
-import Scale from './app/views/Scale/Scale.view';
+import ScaleView from './app/views/Scale/Scale.view';
+import AboutUs from './app/views/AboutUs/AboutUs.view';
 import { Provider } from 'react-redux';
 import store from './core/store';
 
@@ -20,7 +21,8 @@ root.render(
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<HomeView />} />
-          <Route path='/escalas' element={<Scale />} />
+          <Route path='/escalas' element={ <ScaleView /> } />
+          <Route path='/sobre-nos' element={<AboutUs/>} />
           <Route path='/contribuicoes' element={<ContributionView />} />
           <Route path='*' element={<h1>Página não encontrada</h1>} />
         </Routes>

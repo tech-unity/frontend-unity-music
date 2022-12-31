@@ -1,21 +1,21 @@
-import Microphone from '../../assets/Microphone';
+import Songs from '../../assets/Songs';
 import withBoundary from '../../core/hoc/withBoundary';
 import useScale from '../../core/hooks/useScale';
 import ScaleCard from '../components/scale-card/ScaleCard';
 
-function SingersFeature() {
-  const { currentSingers, errorOnFetching } = useScale();
+function SongsFeature() {
+  const { currentSongs, errorOnFetching } = useScale();
 
   if (errorOnFetching) throw errorOnFetching;
 
   return (
     <ScaleCard
       position='even'
-      header='Vocal'
-      singersList={currentSingers}
-      icon={<Microphone />}
+      header='Músicas'
+      songsList={currentSongs}
+      icon={<Songs />}
     ></ScaleCard>
   );
 }
 
-export default withBoundary(SingersFeature, 'vocal');
+export default withBoundary(SongsFeature, 'músicas');

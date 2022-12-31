@@ -1,8 +1,12 @@
 import styled from 'styled-components';
-import { FOOTER_HEIGHT, MEDIA_QUERY_MEDIUM_SIZE } from '../../_constants';
+import {
+  BACKGROUND_COLOR,
+  FOOTER_HEIGHT,
+  MEDIA_QUERY_MEDIUM_SIZE,
+} from '../../_constants';
 
 export const Wrapper = styled.footer`
-  background-color: #212529;
+  background-color: ${BACKGROUND_COLOR};
   color: #ffffff;
 
   width: 100%;

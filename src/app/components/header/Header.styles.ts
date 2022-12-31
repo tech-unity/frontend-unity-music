@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { HEADER_HEIGHT } from '../../_constants';
+import { BACKGROUND_COLOR, HEADER_HEIGHT } from '../../_constants';
 
 export const Wrapper = styled.header`
   width: 100%;
   height: ${HEADER_HEIGHT}px;
 
-  background-color: #212529;
+  background-color: ${BACKGROUND_COLOR};
   color: #ffffff;
 `;
 

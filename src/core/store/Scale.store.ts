@@ -1,11 +1,10 @@
 import {
-  createAction,
   createAsyncThunk,
   createReducer,
   isFulfilled,
   isPending,
   isRejected,
-  SerializedError,
+  SerializedError
 } from '@reduxjs/toolkit';
 import { Scale } from '../../sdk/models/Scale';
 import ScaleService from '../../sdk/services/Scale.service';

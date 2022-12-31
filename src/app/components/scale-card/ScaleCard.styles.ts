@@ -56,3 +56,8 @@ export const ListItem = styled.li``;
 export const CustomIcon = styled.img<{ rotateIcon: number }>`
   transform: rotate(${p => p.rotateIcon}deg);
 `;
+
+export const StyledLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+`

@@ -1,34 +1,33 @@
-import Icon from '@mdi/react';
 import { Person } from '../../../sdk/models/Person';
-import { Band } from '../../../sdk/models/Scale';
+import { Band, Song } from '../../../sdk/models/Scale';
 import * as C from './ScaleCard.styles';
 
 export interface ScaleCardProps {
   position: 'even' | 'odd';
-  iconJSX?: React.ReactNode;
-  icon?: string;
+  icon?: React.ReactNode;
   header: string;
-  rotateIcon?: number;
 
   bandList?: Band[];
   singersList?: Person[];
+  songsList?: Song[];
 }
 
 export default function ScaleCard(props: ScaleCardProps) {
   return (
     <C.ScaleCard position={props.position}>
-      {props.iconJSX && <C.IconDiv>{props.iconJSX}</C.IconDiv>}
-      {props.icon && (
-        <C.IconDiv>
-          <Icon path={props.icon} />
-        </C.IconDiv>
-      )}
+      {props.icon && <C.IconDiv>{props.icon}</C.IconDiv>}
       <C.Header>{props.header}</C.Header>
       <C.List>
         {props.bandList?.map((item, index) => (
           <C.ListItem
             key={index}
           >{`${item.person.name} - ${item.instrument.name}`}</C.ListItem>
+        ))}
+
+        {props.songsList?.map((item, index) => (
+          <C.ListItem key={index}>
+            {<C.StyledLink href={item.src}>{item.name}</C.StyledLink>}
+          </C.ListItem>
         ))}
 
         {props.singersList?.map((item, index) => {

@@ -1,8 +1,12 @@
 import styled from 'styled-components';
-import { FOOTER_HEIGHT, HEADER_HEIGHT } from '../../_constants';
+import {
+  BACKGROUND_COLOR,
+  FOOTER_HEIGHT,
+  HEADER_HEIGHT,
+} from '../../_constants';
 
 export const Wrapper = styled.div`
-  background-color: #212529;
+  background-color: ${BACKGROUND_COLOR};
   color: #fff;
 `;
 

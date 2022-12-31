@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { mdiFacebook, mdiInstagram, mdiMapMarker } from '@mdi/js';
+import { mdiInstagram, mdiMapMarker } from '@mdi/js';
 import Icon from '@mdi/react';
+import styled from 'styled-components';
 import FacebookIcon from '../../../assets/facebook';
 
 export default function FooterIcons() {
