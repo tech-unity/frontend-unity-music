@@ -7,9 +7,11 @@ import reportWebVitals from './reportWebVitals';
 import ContributionView from './app/views/Contributions/Contribution.view';
 import HomeView from './app/views/Home/Home.view';
 import ScaleView from './app/views/Scale/Scale.view';
-import AboutUs from './app/views/AboutUs/AboutUs.view';
+import AboutUsView from './app/views/AboutUs/AboutUs.view';
 import { Provider } from 'react-redux';
 import store from './core/store';
+import NotFoundView from './app/views/NotFound.view';
+import UserCreateView from './app/views/Forms/UserCreate.view';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -21,10 +23,11 @@ root.render(
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<HomeView />} />
-          <Route path='/escalas' element={ <ScaleView /> } />
-          <Route path='/sobre-nos' element={<AboutUs/>} />
+          <Route path='/escalas' element={<ScaleView />} />
+          <Route path='/sobre-nos' element={<AboutUsView />} />
           <Route path='/contribuicoes' element={<ContributionView />} />
-          <Route path='*' element={<h1>Página não encontrada</h1>} />
+          <Route path='/adm/user/create' element={<UserCreateView />} />
+          <Route path='*' element={<NotFoundView />} />
         </Routes>
       </BrowserRouter>
       <GlobalStyles></GlobalStyles>
