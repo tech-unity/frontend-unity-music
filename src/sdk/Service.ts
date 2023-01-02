@@ -11,6 +11,6 @@ function getData<T>(response: AxiosResponse<T>) {
   return response.data;
 }
 
-Http.defaults.baseURL = 'http://localhost:3000';
+Http.defaults.baseURL = process.env.REACT_APP_API_HOST;
 
 export default Service;
