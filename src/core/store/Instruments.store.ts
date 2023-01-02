@@ -4,38 +4,37 @@ import {
   isFulfilled,
   isPending,
   isRejected,
-  SerializedError
+  SerializedError,
 } from '@reduxjs/toolkit';
-import { Scale } from '../../sdk/models/Scale';
-import ScaleService from '../../sdk/services/Scale.service';
+import { Instrument } from '../../sdk/models/Instrument';
+import InstrumentService from '../../sdk/services/Instrument.service';
 
-interface ScaleSliceState {
-  items: Scale[];
+interface InstrumentSliceState {
+  items: Instrument[];
   fetching: boolean;
   errorOnFetching?: SerializedError;
 }
 
-const initialState: ScaleSliceState = {
+const initialState: InstrumentSliceState = {
   items: [],
   fetching: false,
   errorOnFetching: undefined,
 };
 
-export const fetchScales = createAsyncThunk(
-  'get/fetchScale',
+export const fetchInstruments = createAsyncThunk(
+  'get/fetchInstruments',
   async function () {
-    const scales = await ScaleService.getScales();
-    return scales;
+    return await InstrumentService.getInstruments();
   }
 );
 
-export const scaleReducer = createReducer(initialState, builder => {
-  const pendingActions = isPending(fetchScales);
-  const fullfilledActions = isFulfilled(fetchScales);
-  const rejectedActions = isRejected(fetchScales);
+export const instrumentReducer = createReducer(initialState, builder => {
+  const pendingActions = isPending(fetchInstruments);
+  const fullfilledActions = isFulfilled(fetchInstruments);
+  const rejectedActions = isRejected(fetchInstruments);
 
   builder
-    .addCase(fetchScales.fulfilled, (state, action) => {
+    .addCase(fetchInstruments.fulfilled, (state, action) => {
       state.items = action.payload;
     })
     .addMatcher(pendingActions, state => {

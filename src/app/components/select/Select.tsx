@@ -17,13 +17,10 @@ export default function CustomSelect(props: CustomSelectProps) {
     <Wrapper>
       {props.label && <label className='Label'>{props.label}</label>}
       <Select
-        mode={props.mode}
+        {...props}
         allowClear
         style={{ width: '100%' }}
-        placeholder={props.placeholder}
-        defaultValue={['a10', 'c12']}
-        onChange={props.handleChange}
-        options={props.options}
+        showArrow
       />
     </Wrapper>
   );

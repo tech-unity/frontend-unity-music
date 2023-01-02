@@ -1,13 +1,13 @@
 import usePageTitle from '../../../core/hooks/usePageTitle';
-import UserCreateFeature from '../../features/UserCreateFeature';
+import PersonCreateFeature from '../../features/PersonCreateFeature';
 import DefaultLayout from '../../layouts/Default/Default.layout';
 
-export default function UserCreateView() {
+export default function PersonCreateView() {
   usePageTitle('Nova Pessoa');
 
   return (
     <DefaultLayout>
-      <UserCreateFeature />
+      <PersonCreateFeature />
     </DefaultLayout>
   );
 }

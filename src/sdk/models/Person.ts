@@ -1,8 +1,10 @@
+import { Gender } from "./_gender";
+
 export interface Person {
   id: string;
   name: string;
   email: string;
   phone?: string;
-  gender: 'M' | 'F';
+  gender: Gender;
   isMinister: boolean;
 }

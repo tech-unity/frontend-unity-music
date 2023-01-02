@@ -4,7 +4,7 @@ import AboutUsFeature from '../../features/AboutUsFeature';
 import DefaultLayout from '../../layouts/Default';
 import * as C from './AboutUs.styles.view';
 
-export default function ContributionView() {
+export default function AboutUsView() {
   usePageTitle('Sobre nós');
   return (
     <DefaultLayout>

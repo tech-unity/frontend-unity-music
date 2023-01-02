@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
+import { BACKGROUND_COLOR } from '../../_constants';
 
 const COLORS = {
   red: '#F84735',
@@ -20,10 +21,10 @@ const THEME = {
     },
   },
   primary: {
-    bg: '#0099FF',
-    color: '#FFFFFF',
+    bg: '#FFFFFF',
+    color: '#000000',
     onHover: `
-      box-shadow: 0 3px 6px rgb(0,0,0,.1);
+      box-shadow: 0 3px 6px rgb(2,3,3,.1);
     `,
     disabled: {
       color: '#FFF',
@@ -48,13 +49,22 @@ export const Wrapper = styled.button<{
 }>`
   padding: 6px 8px 4px;
   border: 1px solid ${p => THEME[p.variant].bg};
+  border-radius: 5px;
+
+  font-size: 16px;
+  width: 220px;
+  height: 32px;
 
   color: ${p => THEME[p.variant].color};
   background-color: ${p => THEME[p.variant].bg};
 
+  cursor: pointer;
+
   &:hover,
   &:focus {
     ${p => THEME[p.variant].onHover}
+    background-color: ${BACKGROUND_COLOR};
+    color: ${p => THEME[p.variant].bg};
   }
 
   &:disabled {

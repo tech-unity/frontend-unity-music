@@ -12,7 +12,7 @@ export interface ButtonProps
 
 export default function Button({ label, variant, ref, ...props }: ButtonProps) {
   return (
-    <B.Wrapper variant={variant} {...props}>
+    <B.Wrapper variant={variant} {...props} type="button">
       {label}
     </B.Wrapper>
   );
