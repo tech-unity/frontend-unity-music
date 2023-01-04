@@ -28,7 +28,6 @@ function PersonCreateFeature() {
       instruments,
     };
 
-    console.log(newPerson);
     await PersonService.insertNewPerson(newPerson);
 
     info({

@@ -17,7 +17,7 @@ class PersonService extends Service {
   }
 
   static insertNewPerson(person: NewPersonDTO) {
-    return this.Http.post<Person[]>('/people', person).then(this.getData);
+    return this.Http.post('/people', person).then(this.getData);
   }
 }
 

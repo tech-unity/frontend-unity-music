@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import info from '../core/utils/info';
 import AboutUsView from './views/AboutUs/AboutUs.view';
 import ContributionView from './views/Contributions/Contribution.view';
+import InstrumentCreateView from './views/Forms/InstrumentCreate.view';
 import PersonCreateView from './views/Forms/PersonCreate.view';
 import HomeView from './views/Home/Home.view';
 import NotFoundView from './views/NotFound.view';
@@ -25,7 +26,8 @@ export default function App() {
         <Route path='/escalas' element={<ScaleView />} />
         <Route path='/sobre-nos' element={<AboutUsView />} />
         <Route path='/contribuicoes' element={<ContributionView />} />
-        <Route path='/adm/user/create' element={<PersonCreateView />} />
+        <Route path='/adm/person/create' element={<PersonCreateView />} />
+        <Route path='/adm/instrument/create' element={<InstrumentCreateView />} />
         <Route path='*' element={<NotFoundView />} />
       </Routes>
     </BrowserRouter>

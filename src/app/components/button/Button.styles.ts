@@ -60,6 +60,8 @@ export const Wrapper = styled.button<{
 
   cursor: pointer;
 
+  transition: 0.5s ease;
+
   &:hover,
   &:focus {
     ${p => THEME[p.variant].onHover}
