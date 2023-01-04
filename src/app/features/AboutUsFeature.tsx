@@ -4,6 +4,7 @@ import image2 from '../../assets/about-us/image2.png';
 import image3 from '../../assets/about-us/image3.png';
 import withBoundary from '../../core/hoc/withBoundary';
 import CustomCarousel from '../components/carousel/Carousel';
+import { TABLET_WIDTH } from '../_constants';
 
 function AboutUsFeature() {
   return (
@@ -39,12 +40,14 @@ const Content = styled.div`
   height: 264px;
 
   word-wrap: break-word;
-  word-wrap: break-word; 
 `;
 
 const Images = styled.div`
   width: 480px;
-  height: 320px;
+
+  @media screen and (max-width: ${TABLET_WIDTH}px) {
+    width: 280px;
+  }
 `;
 
 export default withBoundary(AboutUsFeature, 'sobre-nós');

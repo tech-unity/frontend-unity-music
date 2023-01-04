@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { BACKGROUND_COLOR, HEADER_HEIGHT } from '../../_constants';
+import {
+  BACKGROUND_COLOR,
+  HEADER_HEIGHT,
+  TABLET_WIDTH,
+} from '../../_constants';
 
 export const Wrapper = styled.header`
   width: 100%;
@@ -11,11 +15,18 @@ export const Wrapper = styled.header`
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   margin: auto;
   height: 100%;
   max-width: 848px;
+
+  @media screen and (max-width: ${TABLET_WIDTH}px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const List = styled.ul`

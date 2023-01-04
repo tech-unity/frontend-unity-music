@@ -10,7 +10,7 @@ export default function Header() {
           <Logo />
         </NavLink>
         <H.List>
-        <H.ListItem>
+          <H.ListItem>
             <NavLink to='/sobre-nos'>Sobre nós</NavLink>
           </H.ListItem>
           <H.ListItem>

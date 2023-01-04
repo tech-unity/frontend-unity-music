@@ -27,6 +27,7 @@ export default function CustomCarousel(props: CustomCarouselProps) {
 const Image = styled.img`
   height: 320px;
   overflow: hidden;
+  object-fit: cover;
 `;
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }: any) => (

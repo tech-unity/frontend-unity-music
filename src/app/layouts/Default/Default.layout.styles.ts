@@ -25,4 +25,5 @@ export const FeaturedContent = styled.section`
   min-height: calc(100vh - ${FOOTER_HEIGHT}px - ${HEADER_HEIGHT}px);
   flex: 1;
   gap: 32px;
+  padding: 16px;
 `;
