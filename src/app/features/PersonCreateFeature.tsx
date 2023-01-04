@@ -28,7 +28,7 @@ function PersonCreateFeature() {
       instruments,
     };
 
-    console.log(newPerson)
+    console.log(newPerson);
     await PersonService.insertNewPerson(newPerson);
 
     info({
@@ -52,54 +52,49 @@ function PersonCreateFeature() {
   if (errorOnFetching) throw errorOnFetching;
 
   return (
-    <Wrapper>
+    <>
       <Heading>Cadastrar pessoas</Heading>
       <Container>
-        <Column>
-          <Input
-            label='Nome'
-            onChange={e => setName(e.currentTarget.value)}
-          ></Input>
-          <Input
-            label='Email'
-            onChange={e => setEmail(e.currentTarget.value)}
-          ></Input>
-          <Input
-            label='Telefone'
-            onChange={e => setPhone(e.currentTarget.value)}
-          ></Input>
-        </Column>
-        <Column>
-          <CustomSelect
-            label='Gênero'
-            placeholder='Selecione ...'
-            options={genderOptions}
-            defaultValue='M'
-            onSelect={e => setGender(e)}
-          ></CustomSelect>
-          <CustomSelect
-            label='Instrumentos'
-            placeholder='Selecione ...'
-            mode='multiple'
-            options={dropdownInstruments}
-            onSelect={e => setInstruments([...instruments, e])}
-            onDeselect={e =>
-              setInstruments(instruments.filter(instrument => e !== instrument))
-            }
-          ></CustomSelect>
-          <CustomCheckbox
-            label='Ministro'
-            onChange={e => setIsMinister(e.target.checked)}
-          ></CustomCheckbox>
-        </Column>
+        <Input
+          label='Nome'
+          onChange={e => setName(e.currentTarget.value)}
+        ></Input>
+        <Input
+          label='Email'
+          onChange={e => setEmail(e.currentTarget.value)}
+        ></Input>
+        <Input
+          label='Telefone'
+          onChange={e => setPhone(e.currentTarget.value)}
+        ></Input>
+        <CustomSelect
+          label='Gênero'
+          placeholder='Selecione ...'
+          options={genderOptions}
+          defaultValue='M'
+          onSelect={e => setGender(e)}
+        ></CustomSelect>
+        <CustomSelect
+          label='Instrumentos'
+          placeholder='Selecione ...'
+          mode='multiple'
+          options={dropdownInstruments}
+          onSelect={e => setInstruments([...instruments, e])}
+          onDeselect={e =>
+            setInstruments(instruments.filter(instrument => e !== instrument))
+          }
+        ></CustomSelect>
+        <CustomCheckbox
+          label='Ministro'
+          onChange={e => setIsMinister(e.target.checked)}
+        ></CustomCheckbox>
         <Button
           label='Enviar'
           variant='primary'
-          style={{ marginTop: '100px' }}
           onClick={insertPerson}
         ></Button>
       </Container>
-    </Wrapper>
+    </>
   );
 }
 
@@ -107,35 +102,13 @@ export default withBoundary(PersonCreateFeature, 'user create form');
 
 const Heading = styled.h1``;
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  width: 100%;
-
-  gap: 24px;
-`;
-
-const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-`;
-
 const Container = styled.form`
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
 
-  gap: 23px;
+  gap: 24px;
   column-gap: 500px;
 `;

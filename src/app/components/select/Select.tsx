@@ -8,7 +8,6 @@ import {
 } from '../../_constants';
 
 export interface CustomSelectProps extends SelectProps {
-  handleChange?: () => void;
   label: string;
 }
 
@@ -16,12 +15,7 @@ export default function CustomSelect(props: CustomSelectProps) {
   return (
     <Wrapper>
       {props.label && <label className='Label'>{props.label}</label>}
-      <Select
-        {...props}
-        allowClear
-        style={{ width: '100%' }}
-        showArrow
-      />
+      <Select {...props} allowClear style={{ width: '100%' }} showArrow />
     </Wrapper>
   );
 }
@@ -30,7 +24,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 19px;
+  gap: 20px;
 
   width: ${INPUTS_WIDTH}px;
 

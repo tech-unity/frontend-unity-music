@@ -10,17 +10,18 @@ export const Wrapper = styled.label`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 19px;
-
+  gap: 20px;
+  width: ${INPUTS_WIDTH}px;
+  
   label.Label {
     font-size: ${LABELS_FONT_SIZE}px;
     font-weight: 600;
     color: #ffffff;
   }
-
+  
   input {
     height: ${INPUTS_HEIGHT}px;
-    width: ${INPUTS_WIDTH}px;
+    width: 100%;
     font-size: 18px;
     font-weight: 500;
 
