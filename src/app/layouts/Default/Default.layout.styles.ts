@@ -20,10 +20,10 @@ export const FeaturedContent = styled.section`
   justify-content: center;
   align-items: center;
 
-  max-width: 1440px;
+  max-width: 1400px;
   margin: auto;
   min-height: calc(100vh - ${FOOTER_HEIGHT}px - ${HEADER_HEIGHT}px);
   flex: 1;
   gap: 32px;
-  padding: 16px;
+  padding: 32px;
 `;

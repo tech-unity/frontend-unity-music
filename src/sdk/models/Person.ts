@@ -1,3 +1,4 @@
+import { Instrument } from "./Instrument";
 import { Gender } from "./_gender";
 
 export interface Person {
@@ -7,4 +8,5 @@ export interface Person {
   phone?: string;
   gender: Gender;
   isMinister: boolean;
+  instruments: Instrument[];
 }

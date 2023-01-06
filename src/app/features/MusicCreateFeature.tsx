@@ -2,42 +2,48 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import withBoundary from '../../core/hoc/withBoundary';
 import info from '../../core/utils/info';
-import InstrumentService from '../../sdk/services/Instrument.service';
+import SongsService from '../../sdk/services/Music.service';
 import Button from '../components/button/Button';
 import Input from '../components/input/Input';
 import { TABLET_WIDTH } from '../_constants';
 
-function InstrumentCreateFeature() {
+function MusicCreateFeature() {
   const [name, setName] = useState('');
+  const [src, setSrc] = useState('');
 
-  async function insertInstrument() {
-    const newInstrument = {
+  async function insertMusic() {
+    const newMusic = {
       name,
+      src,
     };
 
-    await InstrumentService.insertNewInstrument(newInstrument);
+    await SongsService.insertNewSong(newMusic);
 
     info({
-      title: 'Instrumento salvo com sucesso',
-      description: `Você acabou de criar um instrumento`,
+      title: 'Música salva com sucesso',
+      description: `Você acabou de criar uma Música`,
     });
   }
-
+  
   return (
     <>
-      <Heading>Cadastrar instrumentos</Heading>
+      <Heading>Cadastrar músicas</Heading>
       <Container>
         <Fields>
           <Input
-            label='Nome'
+            label='Nome da música'
             onChange={e => setName(e.currentTarget.value)}
+          ></Input>
+          <Input
+            label='Link'
+            onChange={e => setSrc(e.currentTarget.value)}
           ></Input>
         </Fields>
         <ButtonDiv>
           <Button
             label='Enviar'
             variant='primary'
-            onClick={insertInstrument}
+            onClick={insertMusic}
           ></Button>
         </ButtonDiv>
       </Container>
@@ -45,7 +51,7 @@ function InstrumentCreateFeature() {
   );
 }
 
-export default withBoundary(InstrumentCreateFeature, 'instrument create form');
+export default withBoundary(MusicCreateFeature, 'instrument create form');
 
 const Heading = styled.h1``;
 

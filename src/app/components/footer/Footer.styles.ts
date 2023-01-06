@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import {
   BACKGROUND_COLOR,
-  FOOTER_HEIGHT,
-  MEDIA_QUERY_MEDIUM_SIZE,
+  FOOTER_HEIGHT, TABLET_WIDTH
 } from '../../_constants';
 
 export const Wrapper = styled.footer`
@@ -23,7 +22,7 @@ export const Container = styled.div`
   margin: auto;
   height: 100%;
 
-  @media (max-width: ${MEDIA_QUERY_MEDIUM_SIZE}px) {
+  @media (max-width: ${TABLET_WIDTH}px) {
     justify-content: center;
   }
 `;
@@ -34,7 +33,7 @@ export const Branding = styled.span`
   justify-content: center;
   flex-direction: row;
 
-  @media (max-width: ${MEDIA_QUERY_MEDIUM_SIZE}px) {
+  @media (max-width: ${TABLET_WIDTH}px) {
     display: none;
   }
 `;

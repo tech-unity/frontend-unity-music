@@ -4,7 +4,9 @@ import info from '../core/utils/info';
 import AboutUsView from './views/AboutUs/AboutUs.view';
 import ContributionView from './views/Contributions/Contribution.view';
 import InstrumentCreateView from './views/Forms/InstrumentCreate.view';
+import MusicCreateView from './views/Forms/MusicCreate.view';
 import PersonCreateView from './views/Forms/PersonCreate.view';
+import ScaleCreateView from './views/Forms/ScaleCreate.view';
 import HomeView from './views/Home/Home.view';
 import NotFoundView from './views/NotFound.view';
 import ScaleView from './views/Scale/Scale.view';
@@ -27,7 +29,9 @@ export default function App() {
         <Route path='/sobre-nos' element={<AboutUsView />} />
         <Route path='/contribuicoes' element={<ContributionView />} />
         <Route path='/adm/person/create' element={<PersonCreateView />} />
-        <Route path='/adm/instrument/create' element={<InstrumentCreateView />} />
+        <Route path='/adm/instrument/create' element={ <InstrumentCreateView /> } />
+        <Route path='/adm/music/create' element={ <MusicCreateView /> } />
+        <Route path='/adm/scale/create' element={<ScaleCreateView />} />
         <Route path='*' element={<NotFoundView />} />
       </Routes>
     </BrowserRouter>

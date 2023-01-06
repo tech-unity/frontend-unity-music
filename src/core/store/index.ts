@@ -1,11 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { instrumentReducer } from './Instruments.store';
+import { peopleReducer } from './People.store';
 import { scaleReducer } from './Scale.store';
+import { songsReducer } from './Songs.store';
 
 const store = configureStore({
   reducer: {
     scale: scaleReducer,
-    instrument: instrumentReducer
+    instrument: instrumentReducer,
+    people: peopleReducer,
+    songs: songsReducer,
   },
 });
 
