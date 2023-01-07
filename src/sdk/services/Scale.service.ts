@@ -1,8 +1,8 @@
-import { Scale } from '../models/Scale';
+import { Band, Scale } from '../models/Scale';
 import Service from '../Service';
 
 interface NewScaleDTO {
-  band: string[];
+  band: Band[];
   singers: string[];
   date: Date;
   musics: string[];

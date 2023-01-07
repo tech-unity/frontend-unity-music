@@ -36,9 +36,18 @@ const Wrapper = styled.div`
 
   &&& .ant-select-selector {
     align-items: center;
-    height: ${INPUTS_HEIGHT}px;
-    padding: 0 12px;
+    min-height: ${INPUTS_HEIGHT}px;
+    padding: 12px;
 
+    transition: 0.25s ease;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      .ant-select-selection-placeholder {
+        color: transparent;
+        transition: 0.25s ease;
+      }
+    }
     .ant-select-selection-placeholder {
       font-size: 16px;
       font-weight: 600;

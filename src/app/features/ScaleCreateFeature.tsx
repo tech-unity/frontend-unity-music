@@ -4,13 +4,16 @@ import styled from 'styled-components';
 import withBoundary from '../../core/hoc/withBoundary';
 import usePeople from '../../core/hooks/usePeople';
 import useSong from '../../core/hooks/useSong';
+import info from '../../core/utils/info';
+import { Band } from '../../sdk/models/Scale';
+import ScaleService from '../../sdk/services/Scale.service';
 import Button from '../components/button/Button';
 import { CustomCalendar } from '../components/calendar/Calendar';
 import CustomSelect from '../components/select/Select';
 
 function ScaleCreateFeature() {
   const [date, setDate] = useState<Dayjs>(getNextSaturdayFromToday());
-  const [band, setBand] = useState<string[]>([]);
+  const [band, setBand] = useState<Band[]>([]);
   const [singers, setSingers] = useState<string[]>([]);
   const [musics, setMusics] = useState<string[]>([]);
 
@@ -21,18 +24,18 @@ function ScaleCreateFeature() {
 
   async function insertScale() {
     const newScale = {
-      date,
+      date: new Date(date.toString()),
       band,
       singers,
       musics,
     };
     console.log(newScale);
-    // await ScaleService.insertNewScale(newScale);
+    await ScaleService.insertNewScale(newScale);
 
-    // info({
-    //   title: 'Escala salva com sucesso',
-    //   description: `Você acabou de criar uma escala`,
-    // });
+    info({
+      title: 'Escala salva com sucesso',
+      description: `Você acabou de criar uma escala`,
+    });
   }
 
   const {
@@ -71,7 +74,15 @@ function ScaleCreateFeature() {
             placeholder='Selecione ...'
             options={dropdownBand}
             mode='multiple'
-            onSelect={e => setBand([...band, e])}
+            onSelect={e =>
+              setBand([
+                ...band,
+                {
+                  instrument: e.split('@')[0].trim(),
+                  person: e.split('@')[1].trim(),
+                },
+              ])
+            }
             onDeselect={e => setBand(band.filter(person => e !== person))}
           ></CustomSelect>
           <CustomSelect

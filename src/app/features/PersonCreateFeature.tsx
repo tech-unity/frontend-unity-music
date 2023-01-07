@@ -71,7 +71,6 @@ function PersonCreateFeature() {
             label='Gênero'
             placeholder='Selecione ...'
             options={genderOptions}
-            defaultValue='M'
             onSelect={e => setGender(e)}
           ></CustomSelect>
           <CustomSelect

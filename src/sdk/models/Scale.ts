@@ -9,7 +9,7 @@ export interface Scale {
 }
 
 export interface Band {
-  id: string;
+  id?: string;
   instrument: Instrument;
   person: Person;
 }
