@@ -24,7 +24,7 @@ export const Card = styled.div<{ position: 'odd' | 'even' }>`
 
 export const IconDiv = styled.div`
   width: 120px;
-  height: fit-content;
+  min-height: 154px;
   display: flex;
   align-items: center;
   justify-content: center;
