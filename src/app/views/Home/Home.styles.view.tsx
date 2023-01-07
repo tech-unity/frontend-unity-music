@@ -1,39 +1,18 @@
 import styled from 'styled-components';
 
-export const Container = styled.div<{ base64: string }>`
-  background:  url('${p => p.base64}');
-  background-color: #000;
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-size: cover;
-  
-  overflow: hidden;
-
+export const Section = styled.section`
   width: 100%;
-  height: 80vh;
-`;
+  gap: 60px;
 
-export const Text = styled.div`
-  padding: 24px;
-
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  flex-wrap: wrap;
   justify-content: center;
-`
-
-export const Header = styled.span`
-  color: #fff;
-  font-size: 3rem;
-  font-weight: 500;
-  line-height: 4rem;
-  letter-spacing: 0em;
+  align-items: center;
 `;
 
-export const Content = styled.span`
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 500;
-  line-height: 4rem;
-  letter-spacing: 0em;
+export const Heading = styled.h1`
+  font-weight: 600;
+  font-size: 48px;
 `;

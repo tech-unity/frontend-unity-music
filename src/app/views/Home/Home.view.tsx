@@ -1,18 +1,23 @@
-import { Container, Content, Header, Text } from './Home.styles.view';
-import DefaultLayout from '../../layouts/Default';
-import cruzBase64 from '../../../assets/cruz';
 import usePageTitle from '../../../core/hooks/usePageTitle';
+import HomeFeature from '../../features/HomeFeature';
+import DefaultLayout from '../../layouts/Default';
+import * as C from './Home.styles.view';
 
 export default function HomeView() {
-  usePageTitle('Home')
+  usePageTitle('Home');
   return (
     <DefaultLayout>
-      <Container base64={cruzBase64()}>
-        <Text>
-          <Header>Unity Music</Header>
-          <Content>Levando amor ao mundo</Content>
-        </Text>
-      </Container>
+      <C.Section>
+        <HomeFeature />
+      </C.Section>
+      {/* <C.Section>
+        <C.Heading>Sobre nós</C.Heading>
+        <AboutUsFeature />
+      </C.Section>
+      <C.Section>
+        <C.Heading>Contribuições</C.Heading>
+        <ContributionsFeature />
+      </C.Section> */}
     </DefaultLayout>
   );
 }

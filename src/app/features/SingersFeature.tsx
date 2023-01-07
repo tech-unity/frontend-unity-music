@@ -1,4 +1,4 @@
-import Microphone from '../../assets/Microphone';
+import Microphone from '../../assets/scales/Microphone';
 import withBoundary from '../../core/hoc/withBoundary';
 import useScale from '../../core/hooks/useScale';
 import ScaleCard from '../components/scale-card/ScaleCard';

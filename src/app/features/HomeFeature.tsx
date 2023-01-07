@@ -1,12 +1,9 @@
-import styled from 'styled-components';
-import image1 from '../../assets/about-us/image1.png';
-import image2 from '../../assets/about-us/image2.png';
-import image3 from '../../assets/about-us/image3.png';
-import withBoundary from '../../core/hoc/withBoundary';
-import CustomCarousel from '../components/carousel/Carousel';
-import { TABLET_WIDTH } from '../_constants';
+import styled from "styled-components";
+import Cruz from "../../assets/cruz";
+import withBoundary from "../../core/hoc/withBoundary";
+import { TABLET_WIDTH } from "../_constants";
 
-function AboutUsFeature() {
+function HomeFeature() {
   return (
     <Container>
       <Content>
@@ -16,7 +13,7 @@ function AboutUsFeature() {
         pulvinar dignis-sim.Lorem ipsum dolor sit amet,consectet-ur adipiscing.
       </Content>
       <Images>
-        <CustomCarousel src={[image1, image2, image3]} />
+        <Cruz/>
       </Images>
     </Container>
   );
@@ -50,11 +47,9 @@ const Content = styled.div`
 `;
 
 const Images = styled.div`
-  width: 480px;
-
-  @media screen and (max-width: ${TABLET_WIDTH}px) {
-    width: 280px;
-  }
+  display: flex;
+  justify-content: center;
+  align-content: center;
 `;
 
-export default withBoundary(AboutUsFeature, 'sobre-nós');
+export default withBoundary(HomeFeature, 'sobre-nós');

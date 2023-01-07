@@ -1,4 +1,4 @@
-import Songs from '../../assets/Songs';
+import Songs from '../../assets/scales/Songs';
 import withBoundary from '../../core/hoc/withBoundary';
 import useScale from '../../core/hooks/useScale';
 import ScaleCard from '../components/scale-card/ScaleCard';
