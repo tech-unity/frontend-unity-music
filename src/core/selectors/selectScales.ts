@@ -8,8 +8,7 @@ export function selectScales(state: RootState): Scale[] {
 }
 
 export function selectCurrentScale(state: RootState): Scale | undefined {
-  const scales = state.scale.items;
-  return scales ? scales[scales.length - 1] : undefined;
+  return state.scale.currentScale;
 }
 
 export function selectCurrentScaleBand(state: RootState): Band[] | undefined {

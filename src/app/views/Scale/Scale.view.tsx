@@ -20,7 +20,7 @@ export default function ScaleView() {
 
   return (
     <DefaultLayout>
-      <S.Heading>Escala &nbsp;{dayjs(currentScaleDate).format('DD-MM-YYYY')}</S.Heading>
+      <S.Heading>Escala &nbsp;{currentScaleDate && dayjs(currentScaleDate).format('DD-MM-YYYY')}</S.Heading>
       <S.Section>
         <S.Scale>
           <SingersFeature></SingersFeature>

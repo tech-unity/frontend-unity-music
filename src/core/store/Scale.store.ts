@@ -4,19 +4,22 @@ import {
   isFulfilled,
   isPending,
   isRejected,
-  SerializedError
+  SerializedError,
 } from '@reduxjs/toolkit';
+import dayjs from 'dayjs';
 import { Scale } from '../../sdk/models/Scale';
 import ScaleService from '../../sdk/services/Scale.service';
 
 interface ScaleSliceState {
   items: Scale[];
+  currentScale?: Scale;
   fetching: boolean;
   errorOnFetching?: SerializedError;
 }
 
 const initialState: ScaleSliceState = {
   items: [],
+  currentScale: undefined,
   fetching: false,
   errorOnFetching: undefined,
 };
@@ -37,6 +40,11 @@ export const scaleReducer = createReducer(initialState, builder => {
   builder
     .addCase(fetchScales.fulfilled, (state, action) => {
       state.items = action.payload;
+      state.currentScale = action.payload.find(scale => {
+        const scaleDate = dayjs(scale.date);
+        const today = dayjs();
+        return scaleDate.isAfter(today);
+      });
     })
     .addMatcher(pendingActions, state => {
       state.fetching = true;

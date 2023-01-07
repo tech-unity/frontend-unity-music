@@ -51,7 +51,9 @@ export const List = styled.ul`
   list-style: none;
 `;
 
-export const ListItem = styled.li``;
+export const ListItem = styled.li`
+  text-transform: capitalize;
+`;
 
 export const CustomIcon = styled.img<{ rotateIcon: number }>`
   transform: rotate(${p => p.rotateIcon}deg);
@@ -60,4 +62,4 @@ export const CustomIcon = styled.img<{ rotateIcon: number }>`
 export const StyledLink = styled.a`
   text-decoration: none;
   color: inherit;
-`
+`;
