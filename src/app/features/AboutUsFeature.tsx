@@ -10,10 +10,10 @@ function AboutUsFeature() {
   return (
     <Container>
       <Content>
-        Lorem ipsum dolor sit amet,consectet-ur adipiscing elit. Curabitur ut
-        odio ur-na. Sed scelerisque nisi suscipit lorem maximus tempor. Aenean
-        viverra nibh nisl, sed pretium est cursus non. Donec tempus metus a ante
-        pulvinar dignis-sim.Lorem ipsum dolor sit amet,consectet-ur adipiscing.
+        A Unity é uma comunidade jovem cristã da IASD Guanandi que tem como
+        objetivo levar a palavra de Deus para outros jovens. Foi criada em 2020
+        com a ideia de transformar uma simples escola sabatina em uma comunidade
+        jovem ativa na sociedade e cada vez mais unida entre os membros.
       </Content>
       <Images>
         <CustomCarousel src={[image1, image2, image3]} />

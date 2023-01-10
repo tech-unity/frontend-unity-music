@@ -1,19 +1,18 @@
-import styled from "styled-components";
-import Cruz from "../../assets/cruz";
-import withBoundary from "../../core/hoc/withBoundary";
-import { TABLET_WIDTH } from "../_constants";
+import styled from 'styled-components';
+import Cruz from '../../assets/cruz';
+import withBoundary from '../../core/hoc/withBoundary';
+import { TABLET_WIDTH } from '../_constants';
 
 function HomeFeature() {
   return (
     <Container>
       <Content>
-        Lorem ipsum dolor sit amet,consectet-ur adipiscing elit. Curabitur ut
-        odio ur-na. Sed scelerisque nisi suscipit lorem maximus tempor. Aenean
-        viverra nibh nisl, sed pretium est cursus non. Donec tempus metus a ante
-        pulvinar dignis-sim.Lorem ipsum dolor sit amet,consectet-ur adipiscing.
+        A Unity representa a mudança que a escola sabatina da IASD Guanandi faz
+        na sociedade trazendo novas formas de espalhar a palavra de Deus, são
+        jovens que estão dispostos a fazer a diferença na vida das pessoas.
       </Content>
       <Images>
-        <Cruz/>
+        <Cruz />
       </Images>
     </Container>
   );
